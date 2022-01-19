@@ -1,29 +1,34 @@
-const ingresos = [new Ingreso("Salario", 23), new Ingreso("Venta", 50)];
+const ingresos = [
+  new Ingreso("Salario", 400),
+  new Ingreso("Venta", 150)
+];
 
-const egresos = [new Egreso("Renta", 500)];
+const egresos = [
+  new Egreso("Renta", 10),
+  new Egreso("Comida", 20)
+];
 
 function cargarApp() {
   cargarCabecero();
 }
 
 function totalIngresos() {
-  let totalIngresos = 0;
-  for (let ingreso of ingresos) {
-    totalIngresos += ingreso.valor;
+  let totalIngreso = 0;
+  for(let ingreso of ingresos){
+    totalIngreso += ingreso.valor;
   }
-  return totalIngresos;
+  return totalIngreso;
 }
 
 function totalEgresos() {
-  let totalEgresos;
-  for (let egreso of egresos) {
-    totalEgresos += egreso.valor;
+  let totalEgreso = 0;
+  for(let egreso of egresos){
+    totalEgreso += egreso.valor;
   }
-  return totalEgresos;
+  return totalEgreso;
 }
 
 function cargarCabecero() {
   let totalCuenta = totalIngresos() - totalEgresos();
-  let porcentajeEgreso = totalEgresos() / totalEgresos();
-  document.getElementById("totalCuenta").innerHTML = totalCuenta;
+  document.getElementById("presupuesto").innerHTML = '$' + totalCuenta;
 }
