@@ -1,11 +1,9 @@
 const ingresos = [
-  new Ingreso("Salario", 400),
-  new Ingreso("Venta", 140)
+
 ];
 
 const egresos = [
-  new Egreso("Renta", 10),
-  new Egreso("Comida", 20)
+
 ];
 
 function cargarApp() {
@@ -41,9 +39,12 @@ function cargarCabecero() {
   let totalCuenta = totalIngresos() - totalEgresos();
   let porcentajeEgresos = totalEgresos()/totalIngresos();
   document.getElementById("presupuesto").innerHTML = formato(totalCuenta);
-  document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgresos);
   document.getElementById("ingresos").innerHTML = formato(totalIngresos());
   document.getElementById("egresos").innerHTML = formato(totalEgresos());
+  if(isNaN(porcentajeEgresos)){
+    porcentajeEgresos = formatoPorcentaje(0)
+  }
+  document.getElementById("porcentaje").innerHTML = formatoPorcentaje(porcentajeEgresos);
 }
 
 function crearIngresoHTML(ingreso){
