@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 .limpiarEstilos::after {
@@ -20,6 +26,20 @@ body {
     font-weight: 400;
 }
 
+.yo{
+    position: absolute;
+    top: 0;
+    margin: 8px;
+}
+.redes{
+    color: #000000c4 ;
+    transition: all .3s;
+}
+
+.redes:hover{
+    font-size: 25px;
+}
+
 .derecha { float: right; }
 .rojo { color: #FF5049 !important; }
 .rojofocus:focus { border: 1px solid #FF5049 !important; }
@@ -33,9 +53,8 @@ body {
     padding-top: 150px;
     padding-bottom: 100px;
     color: #fff;
-    background: url(fondo.png), #7b4397;
-    background: url(fondo.png), -webkit-gradient(linear, right top, left top, from(#7b4397), to(#dc2430));
-    background: url(fondo.png), linear-gradient(to left, #7b4397, #dc2430)
+    background: url(fondo.png), #ffffff;
+    background: url(fondo.png), linear-gradient(175deg, rgba(9, 84, 153, 0.939) 0%, rgba(22,178,204,0.5802696078431373) 99%);
 }
 
 .presupuesto {
@@ -70,11 +89,13 @@ body {
 
 .presupuesto_ingreso {
     margin-bottom: 10px;
-    background-color: #28B9B5;
+    background-color: #0e7c64;
+    border-radius: 5px;
 }
 
 .presupuesto_egreso {
     background-color: #FF5049;
+    border-radius: 5px;
 }
 
 .presupuesto_ingreso--texto,
@@ -121,16 +142,16 @@ body {
 .agregar_tipo {
     width: 55px;
     border: 1px solid #e7e7e7;
-    height: 40px;
-    font-size: 18px;
-    color: inherit;
-    background-color: rgb(255, 255, 255);
-    margin-right: 10px;
-    font-weight: 250;
     border-radius: 5px;
+    height: 42px;
+    font-size: 15px;
+    color: inherit;
+    background-color: #fff;
+    margin-right: 10px;
+    font-weight: 300;
     transition: border 0.3s;
+    text-align: center;
 }
-
 
 .agregar_descripcion,
 .agregar_valor {
@@ -159,9 +180,6 @@ body {
     line-height: 1.1;
     margin-left: 10px;
 }
-.agregar_btn:hover{
-    color: green;
-}
 
 .agregar_btn:active { transform: translateY(2px); }
 
@@ -169,7 +187,7 @@ body {
 .agregar_descripcion:focus,
 .agregar_valor:focus {
     outline: none;
-    border: 1px solid #28B9B5;
+    border: 1px solid #0e7c64;
 }
 
 .agregar_btn:focus { outline: none; }
@@ -195,10 +213,9 @@ h2 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
-    text-align: center;
 }
 
-.ingreso_titulo { color: #28B9B5; }
+.ingreso_titulo { color: #0e7c64; }
 .egreso_titulo { color: #FF5049; }
 
 .elemento {
@@ -230,27 +247,28 @@ h2 {
     text-align: center;
 }
 
-.ingreso .elemento_valor,
-.ingreso .elemento_porcentaje{
-    color: #28B9B5;
+.ingreso .elemento_valor{
+    color: #0e7c64;
+}
+.ingreso .elemento_eliminar--btn,
+.egreso .elemento_eliminar--btn 
+{
+    color:red
 }
 
 .egreso .elemento_valor,
-.egreso .elemento_porcentaje,
-.egreso .elemento_eliminar--btn {
+.egreso .elemento_porcentaje
+{
     color: #FF5049;
 }
 
-.ingreso .elemento_eliminar--btn{
-    color:#dc2430
-}
 
 .elemento_eliminar {
     float: left;
 }
 
 .elemento_eliminar--btn {
-    font-size: 19px;
+    font-size: 22px;
     background: none;
     border: none;
     cursor: pointer;
@@ -258,63 +276,6 @@ h2 {
     vertical-align: middle;
     line-height: 1;
     display: none;
-}
-
-.selectbox{
-    width: 5%;
-    position: relative;   
-}
-.select{
-    background-color: #f7f7f7;
-    box-shadow: 0px 0px 0px rgba(0,0,0,0.16);  
-    border-radius: 5px;
-    cursor:pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: .2s ease all;
-    position: relative;
-    z-index: 200 ;
-    border: 2px solid transparent;
-}
-.select.active,
-.select:hover{
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.16);
-    border: 2px solid rgba(0, 0, 0, 0.171);
-
-}
-.opciones{
-    background-color: #f7f7f7;
-    border-radius: 5px; 
-    display: none;
-}
-.opciones.active{
-    display: block;
-}
-
-.iconoIng{
-    color:rgba(0, 0, 0, 0.719);
-    font-size: 20px;
-}
-.iconoEg{
-    color:rgba(0, 0, 0, 0.719);
-    font-size: 20px;
-}
-
-.iconoIng:hover{
-    color: #28B9B5;
-}
-
-.iconoEg:hover{
-    color: #FF5049;
-}
-
-.contenido-opcion{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    transition: .2s ease all;
-    
 }
 
 .elemento_eliminar--btn:focus { outline: none; }
